@@ -1,0 +1,27 @@
+#partner .wrapper{
+    display: block;
+}
+
+.partner-grid {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+flex-flow: row wrap;
+    flex: 50%;
+
+}
+
+.partner-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.partner-logo {
+    height: 10rem;
+    width: 10rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 2rem 3rem;
+}

@@ -1,0 +1,115 @@
+/* 
+Navigation
+*/
+
+#header {
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+
+    .wrapper {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 7rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include media-query($on-mobile){
+        height: 4.6rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    }
+}
+
+.logo{
+    height: 100%;
+    //filter: invert(100%);
+}
+
+.logo-img{
+    height: 100%;
+}
+
+.main-nav {
+    margin-left: auto;
+
+    @include media-query($on-mobile) {
+        #menu-toggle:checked + .nav-bar {
+            opacity: 1;
+            //transform: translateY(2rem);
+            visibility: visible;
+        }
+
+        .nav-link {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.nav-bar {
+    @include media-query($on-mobile){
+        align-items: center;
+        background-color: $color-white;
+        display: flex;
+        flex-flow: column wrap;
+        right: 0;
+        opacity: 0;
+        position: absolute;
+        top: 4.6rem;
+        transition: opacity 1s ease, transform 1s ease, visibility 1s ease;
+        visibility: hidden;
+        width: 100vw;
+        z-index: 1;
+        padding-top: 2rem;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $color-white;
+    margin-left: 2rem;
+
+    &:hover,
+    &.active {
+        text-shadow: 0.6px 0 0 $color-white, -0.6px 0 0 $color-white, 0 0.6px 0 $color-white, 0 -0.6px 0 $color-white;
+    }
+
+    @include media-query($on-mobile){
+    color: $text-color;
+    margin-left: 0;
+    }
+}
+
+.lang-toggle {
+    transition: opacity 1s ease, visibility 1s ease;
+    position: absolute;
+    right: 2rem;
+    bottom: -1.5rem;
+    z-index: 5;
+
+    img {
+        border-radius: 50%;
+        //border: 3px solid white;
+        height: 2.2rem;
+        margin-left: 0.4rem;
+        //box-shadow: 0 0 12px #666;
+    }
+
+    @include media-query($on-mobile) {
+        align-items: center;
+        position: relative;
+        right: 0;
+    }
+}
+
+.distance-block {
+    height: 7rem;
+    @include media-query($on-mobile) {
+        height: 4rem;
+    }
+}

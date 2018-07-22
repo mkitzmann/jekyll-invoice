@@ -1,0 +1,64 @@
+/* 
+News
+*/
+
+.card-container {
+    display: flex;
+    flex: 1;
+    margin: 2rem -8px 2rem;
+    @include media-query($on-mobile){
+        flex-direction: column;
+        margin: 0 -8px;
+    }
+}
+
+.card {
+    background-color: $color-white;
+    display: flex;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 2rem;
+    color: $text-color;
+    min-height: 15rem;
+    width: 100%;
+    flex-direction: column;
+    @include media-query($on-mobile){
+        margin-bottom: 15px;
+        width: auto;
+    }
+}
+
+.card-icon {
+    margin-bottom: 2rem;
+    min-height: 3.4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+
+.card-content {
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-bottom: 1rem;
+    }
+}
+
+.card-footer {
+    margin-top: auto;
+
+    height: 2rem;
+
+    .btn {
+        display: block;
+        text-align: center;
+        width: 100%;
+        background-color: $primary-color;
+    }
+}

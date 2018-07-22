@@ -1,0 +1,84 @@
+/*
+Variables
+*/
+
+// Some Style Variables
+$primary-color: #E2BC5C;
+$secondary-color: #464646;
+$error: #de3535;
+$success: #d5f5d7;
+$color-white: #fff;
+$color-black: #000;
+$color-grey-light: #bbb;
+$text-color: #444;
+
+$content-width: 960px;
+
+// Breakpoints. Use these in your media queries.
+$on-mobile:          700px !default;
+$on-laptop:        1000px !default;
+
+$font-size: (15px/16px)*100%;
+$font-family: "Montserrat", sans-serif;
+$alt-font-family: monospace;
+$font-color: #333;
+
+/* Social Icons */
+$twitter: #78cdf0 !default;
+$facebook: #537bbd !default;
+$instagram: #517fa4 !default;
+$youtube: #d34836 !default;
+$snapchat: #fffc00 !default;
+$pinterest:	#cb2027 !default;
+$google: #dd4b39 !default;
+
+
+/* Basics */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+html, body, section{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #aaa;
+  color: $color-black;
+
+  &:hover {
+    text-shadow: 0.2px 0 0 $color-black, -0.2px 0 0 $color-black, 0 0.2px 0 $color-black, 0 -0.2px 0 $color-black;
+  }
+}
+
+/* Mixins */
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+      @content;
+    }
+}
+
+// Import partials.
+@import
+  "partials/sections",
+  "partials/hero",
+  "partials/text",
+  "partials/navigation",
+  "partials/news",
+  "partials/cards",
+  "partials/testimonials",
+  "partials/buttons",
+  "partials/forms",
+  "partials/modal",
+  "partials/menu-icon",
+  "partials/partner"
+;

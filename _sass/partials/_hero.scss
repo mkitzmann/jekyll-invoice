@@ -1,0 +1,36 @@
+/* 
+Hero
+*/
+#hero {
+    height: 70vh;
+    max-height: 800px;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero-content {
+    margin-top: 2rem;
+    width: 40%;
+    color: $color-white;
+    line-height: 1.8;
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    @include media-query($on-mobile){
+        display: none;
+        }
+}

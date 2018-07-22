@@ -1,0 +1,50 @@
+/* 
+Menu Icon
+*/
+
+.nav-menu-icon {
+    display: none;
+
+    @include media-query($on-mobile) {
+        color: $color-white;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 2rem;
+        margin-left: 2rem;
+        z-index: 40;
+    }
+
+    div {
+        background-color: white;
+        height: 2px;
+        margin-bottom: 8px;
+        transition: 0.4s ease;
+        width: 36px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#menu-toggle {
+    display: none;
+}
+// Rotate first bar
+#menu-toggle:checked ~ .nav-menu-icon div:first-child {
+    transform-origin: left center;
+    transform: translateX(8px) rotate(45deg);
+    width: 28px;
+}
+
+// Fade out the second bar
+#menu-toggle:checked ~ .nav-menu-icon div:nth-child(2) {
+    opacity: 0;
+}
+
+// Rotate last bar
+#menu-toggle:checked ~ .nav-menu-icon div:last-child {
+    transform-origin: left center;
+    transform: translateX(8px) rotate(-45deg);
+    width: 28px;
+}
