@@ -8,6 +8,9 @@ collections:
   uploads:
     title: Uploads
     output: true
+  invoices:
+    title: Invoices
+    output: true
 url: 
 exclude:
 - ".scss"
@@ -15,3 +18,13 @@ exclude:
 - node_modules
 - gruntfile.js
 - package.json
+- Gemfile
+- docker-compose.yaml
+defaults:
+  -
+    scope:
+      path: ""
+      type: "Invoices"
+    values:
+      pdf: true
+      layout: "pdf"
