@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% include head.html %}
+	
+	<body>
+
+		{% for item in site.invoices %}
+		<div class="invoice-item">
+			<div class="title">
+					{{ item.title }}
+			</div>
+			<div class="date">
+					{{ item.date | date:"%d.%m.%Y" }}
+			</div>
+			<div class="link">
+					<a href="{{ item.url }}">PDF</a>
+			</div>
+		</div>
+		{% endfor %}
+
+	</body>
+</html>

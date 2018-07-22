@@ -551,6 +551,13 @@ Menu Icon
   transform: translateX(8px) rotate(-45deg);
   width: 28px; }
 
+/* 
+Overview
+*/
+.invoice-item div {
+  display: inline;
+  padding: 1rem; }
+
 #partner .wrapper {
   display: block; }
 

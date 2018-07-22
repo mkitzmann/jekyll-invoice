@@ -1,0 +1,79 @@
+---
+pdf:
+  page_size: A4
+  orientation: portrait
+  zoom: 1
+  margin-top: 0
+  margin-left: 0
+  margin-right: 0
+  margin-bottom: 0
+  dpi: 400
+  image-dpi: 300
+---
+<!DOCTYPE html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/pdf.css">
+</head>
+
+<body>
+	<div class="page">
+
+		<div class="address">
+			{{ site.data.customers[0].Last-Name}}
+			<br> Tesstraße 18
+			<br> 22222 Hamburg
+		</div>
+
+		<div class="info">
+			<img src="/img/kitzmann-io-logo-large.svg" class="logo">
+		</div>
+
+		<div class="header">
+			Rechnung Nr. 2018
+			<div class="date">
+				{{ page.date | date:"%d.%m.%Y" }}
+			</div>
+		</div>
+
+		<div class="content">
+			{{ content | markdownify }}
+
+			<table class="invoice-grid">
+				<tr class="invoice-grid-header">
+					<td>Position</td>
+					<td>Menge</td>
+					<td>Einheitspreis</td>
+					<td class="text-right">Summe</td>
+				</tr>
+
+				{% for item in page.invoice_items %}
+					{% assign item_sum = item.price | times: item.amount %}
+					{% assign total_sum = total_sum | plus: item_sum %}
+					<tr class="invoice-grid-item">
+						<td>{{item.title}}</td>
+						<td>{{item.amount}}</td>
+						<td>{{item.price}} €</td>
+						<td class="text-right">{{ item_sum }} €</td>
+					</tr>
+				{% endfor %}
+
+				<tr class="invoice-grid-footer">
+						<td></td>
+						<td></td>
+						<td>Gesamt</td>
+						<td class="text-right">{{ total_sum }} €</td>
+					</tr>
+			</table>
+		</div>
+
+		<div class="footer">
+			IBAN: 12321312309312
+		</div>
+	</div>
+
+
+</body>
+
+</html>
